@@ -328,8 +328,8 @@ tidyverse 1.3.2 ──</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>carbon_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(carbon)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Code below does not work... </span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="do">## p &lt;- ggplot2(carbon_df,aes(CarbonIntensity_ordinal,PerCapitaEmission,fill=as.factor(Division)),size=5)+geom_bar(position="dodge",stat="identity")+facet_wrap(~CarbonIntensity_ordinad,nrow=4)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(carbon_df,<span class="fu">aes</span>(CarbonIntensity_ordinal,PerCapitaEmission,<span class="at">fill=</span><span class="fu">as.factor</span>(Division)),<span class="at">size=</span><span class="dv">5</span>)<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge"</span>,<span class="at">stat=</span><span class="st">"identity"</span>)<span class="sc">+</span><span class="fu">facet_wrap</span>(<span class="sc">~</span>CarbonIntensity_ordinad,<span class="at">nrow=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

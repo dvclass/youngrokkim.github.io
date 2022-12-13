@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -153,10 +216,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./assign13.html">
  <span class="dropdown-text">EPPS 6302 Assignment04</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./assign14.html">
- <span class="dropdown-text">EPPS 6302 Assignment05</span></a>
-  </li>  
     </ul>
   </li>
 </ul>
@@ -174,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-anscombe01.r-in-class-github" id="toc-run-anscombe01.r-in-class-github" class="nav-link active" data-scroll-target="#run-anscombe01.r-in-class-github">1. Run anscombe01.R (in class GitHub)</a></li>
+  <li><a href="#epps-6302-assignment-4-text-analytics-using-quanteda" id="toc-epps-6302-assignment-4-text-analytics-using-quanteda" class="nav-link active" data-scroll-target="#epps-6302-assignment-4-text-analytics-using-quanteda">EPPS 6302 Assignment 4 Text Analytics using quanteda</a></li>
   </ul>
 </nav>
     </div>
@@ -197,8 +256,465 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="run-anscombe01.r-in-class-github" class="level2">
-<h2 class="anchored" data-anchor-id="run-anscombe01.r-in-class-github">1. Run anscombe01.R (in class GitHub)</h2>
+<section id="epps-6302-assignment-4-text-analytics-using-quanteda" class="level2">
+<h2 class="anchored" data-anchor-id="epps-6302-assignment-4-text-analytics-using-quanteda">EPPS 6302 Assignment 4 Text Analytics using quanteda</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'quanteda' was built under R version 4.2.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Package version: 3.2.4
+Unicode version: 13.0
+ICU version: 69.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Parallel computing: 16 of 16 threads used.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>See https://quanteda.io for tutorials and examples.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quanteda.textmodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'quanteda.textmodels' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quanteda.textplots)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'quanteda.textplots' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quanteda.textstats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'quanteda.textstats' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Twitter data about President Biden and Xi summit in Novemeber 2021</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Do some background search/study on the event</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>summit <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/datageneration/datamethods/master/textanalytics/summit_11162021.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 14520 Columns: 90</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (50): screen_name, text, source, reply_to_screen_name, hashtags, symbol...
+dbl  (26): user_id, status_id, display_text_width, reply_to_status_id, reply...
+lgl  (10): is_quote, is_retweet, quote_count, reply_count, ext_media_type, q...
+dttm  (4): created_at, quoted_created_at, retweet_created_at, account_create...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(summit)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sum_twt <span class="ot">=</span> summit<span class="sc">$</span>text</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>toks <span class="ot">=</span> <span class="fu">tokens</span>(sum_twt)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>sumtwtdfm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(toks)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sumtwtdfm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "dfm"
+attr(,"package")
+[1] "quanteda"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Latent Semantic Analysis</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sum_lsa <span class="ot">&lt;-</span> <span class="fu">textmodel_lsa</span>(sumtwtdfm)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sum_lsa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Length    Class     Mode   
+sk                     10 -none-    numeric
+docs               145200 -none-    numeric
+features           160030 -none-    numeric
+matrix_low_rank 232363560 -none-    numeric
+data            232363560 dgCMatrix S4     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sum_lsa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "textmodel_lsa"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.2.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+✔ purrr   0.3.4      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tweet_dfm <span class="ot">&lt;-</span> <span class="fu">tokens</span>(sum_twt, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tweet_dfm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Document-feature matrix of: 6 documents, 15,942 features (99.89% sparse) and 0 docvars.
+       features
+docs    breaking news us president biden amp communist china leader xi
+  text1        1    1  1         1     1   1         1     2      1  1
+  text2        0    0  0         0     0   0         0     0      0  0
+  text3        0    0  0         0     1   0         0     0      0  1
+  text4        0    0  0         1     1   0         0     0      0  1
+  text5        0    0  0         0     1   0         0     0      0  1
+  text6        0    0  0         0     1   0         0     0      0  1
+[ reached max_nfeat ... 15,932 more features ]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tag_dfm <span class="ot">&lt;-</span> <span class="fu">dfm_select</span>(tweet_dfm, <span class="at">pattern =</span> <span class="st">"#*"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>toptag <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">topfeatures</span>(tag_dfm, <span class="dv">50</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(toptag, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#china"          "#biden"          "#xijinping"      "#joebiden"      
+ [5] "#america"        "#americans"      "#coronavirus"    "#fentanyl"      
+ [9] "#xi"             "#uyghurgenocide"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tag_fcm <span class="ot">&lt;-</span> <span class="fu">fcm</span>(tag_dfm)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tag_fcm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Feature co-occurrence matrix of: 6 by 685 features.
+               features
+features        #breaking #breakingnews #biden #china #usa #pray4america
+  #breaking             0             4      4      5    5             0
+  #breakingnews         0             0      4      5    4             0
+  #biden                0             0      0    415   44             0
+  #china                0             0      0      8   76             0
+  #usa                  0             0      0      0    6             0
+  #pray4america         0             0      0      0    0             0
+               features
+features        #joebiden #xijinping #america #americans
+  #breaking             0          0        0          0
+  #breakingnews         0          0        0          0
+  #biden              299        366      301        295
+  #china              339        433      308        295
+  #usa                 12         14        0          0
+  #pray4america         0          0        0          0
+[ reached max_nfeat ... 675 more features ]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>topgat_fcm <span class="ot">&lt;-</span> <span class="fu">fcm_select</span>(tag_fcm, <span class="at">pattern =</span> toptag)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_network</span>(topgat_fcm, <span class="at">min_freq =</span> <span class="dv">50</span>, <span class="at">edge_alpha =</span> <span class="fl">0.8</span>, <span class="at">edge_size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>user_dfm <span class="ot">&lt;-</span> <span class="fu">dfm_select</span>(tweet_dfm, <span class="at">pattern =</span> <span class="st">"@*"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>topuser <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">topfeatures</span>(user_dfm, <span class="dv">50</span>))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(topuser, <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "@potus"           "@joebiden"        "@politico"        "@eneskanter"     
+ [5] "@jendeben"        "@nwadhams"        "@nba"             "@washwizards"    
+ [9] "@pelicansnba"     "@capitalonearena" "@kevinliptakcnn"  "@foxbusiness"    
+[13] "@morningsmaria"   "@scmpnews"        "@uyghur_american" "@nytimes"        
+[17] "@petermartin_pcm" "@nahaltoosi"      "@phelimkine"      "@kaylatausche"   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>user_fcm <span class="ot">&lt;-</span> <span class="fu">fcm</span>(user_dfm)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(user_fcm, <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Feature co-occurrence matrix of: 20 by 741 features.
+                 features
+features          @youtube @bfmtv @cnn @lauhaim @barackobama @joebiden
+  @youtube               0      0    0        0            0         0
+  @bfmtv                 0      0    1        1            1         1
+  @cnn                   0      0    0        1            1         1
+  @lauhaim               0      0    0        0            1         1
+  @barackobama           0      0    0        0            0         1
+  @joebiden              0      0    0        0            0         3
+  @kamalaharris          0      0    0        0            0         0
+  @hillaryclinton        0      0    0        0            0         0
+  @billclinton           0      0    0        0            0         0
+  @cbsnews               0      0    0        0            0         0
+                 features
+features          @kamalaharris @hillaryclinton @billclinton @cbsnews
+  @youtube                    0               0            0        0
+  @bfmtv                      1               1            1        1
+  @cnn                        1               1            1        1
+  @lauhaim                    1               1            1        1
+  @barackobama                1               1            1        1
+  @joebiden                   1               1            1        1
+  @kamalaharris               0               1            1        1
+  @hillaryclinton             0               0            1        1
+  @billclinton                0               0            0        1
+  @cbsnews                    0               0            0        0
+[ reached max_feat ... 10 more features, reached max_nfeat ... 731 more features ]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>user_fcm <span class="ot">&lt;-</span> <span class="fu">fcm_select</span>(user_fcm, <span class="at">pattern =</span> topuser)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_network</span>(user_fcm, <span class="at">min_freq =</span> <span class="dv">20</span>, <span class="at">edge_color =</span> <span class="st">"firebrick"</span>, <span class="at">edge_alpha =</span> <span class="fl">0.8</span>, <span class="at">edge_size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wordcloud</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># based on US presidential inaugural address texts, and metadata (for the corpus), from 1789 to present.</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>dfm_inaug <span class="ot">&lt;-</span> <span class="fu">corpus_subset</span>(data_corpus_inaugural, Year <span class="sc">&lt;=</span> <span class="dv">1826</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>(<span class="at">remove =</span> <span class="fu">stopwords</span>(<span class="st">'english'</span>), <span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">10</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'dfm.corpus()' is deprecated. Use 'tokens()' first.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: '...' should not be used for tokens() arguments; use 'tokens()' first.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'remove' is deprecated; use dfm_remove() instead</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_wordcloud</span>(dfm_inaug)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>inaug_speech <span class="ot">=</span> data_corpus_inaugural</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corpus_subset</span>(data_corpus_inaugural, </span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>              President <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Trump"</span>, <span class="st">"Obama"</span>, <span class="st">"Bush"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens</span>(<span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">"english"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_group</span>(<span class="at">groups =</span> President) <span class="sc">%&gt;%</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_trim</span>(<span class="at">min_termfreq =</span> <span class="dv">5</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textplot_wordcloud</span>(<span class="at">comparison =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+government could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+watching could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+poverty could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+confidence could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+accept could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+defend could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in wordcloud_comparison(x, min_size, max_size, min_count, max_words, :
+throughout could not be fit on page. It will not be plotted.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_wordcloud</span>(dfm_inaug, <span class="at">min_count =</span> <span class="dv">10</span>,</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color =</span> <span class="fu">c</span>(<span class="st">'red'</span>, <span class="st">'pink'</span>, <span class="st">'green'</span>, <span class="st">'purple'</span>, <span class="st">'orange'</span>, <span class="st">'blue'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>data_corpus_inaugural_subset <span class="ot">&lt;-</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">corpus_subset</span>(data_corpus_inaugural, Year <span class="sc">&gt;</span> <span class="dv">1949</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kwic</span>(<span class="fu">tokens</span>(data_corpus_inaugural_subset), <span class="at">pattern =</span> <span class="st">"american"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textplot_xray</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-6.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_xray</span>(</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(data_corpus_inaugural_subset, <span class="at">pattern =</span> <span class="st">"american"</span>),</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(data_corpus_inaugural_subset, <span class="at">pattern =</span> <span class="st">"people"</span>),</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(data_corpus_inaugural_subset, <span class="at">pattern =</span> <span class="st">"communist"</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'kwic.corpus()' is deprecated. Use 'tokens()' first.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'kwic.corpus()' is deprecated. Use 'tokens()' first.
+
+Warning: 'kwic.corpus()' is deprecated. Use 'tokens()' first.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">textplot_xray</span>(</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(toks, <span class="at">pattern =</span> <span class="st">"american"</span>),</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(toks, <span class="at">pattern =</span> <span class="st">"people"</span>),</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kwic</span>(toks, <span class="at">pattern =</span> <span class="st">"communist"</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">color =</span> keyword) <span class="sc">+</span> </span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>, <span class="st">"green"</span>)) <span class="sc">+</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-8.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>features_dfm_inaug <span class="ot">&lt;-</span> <span class="fu">textstat_frequency</span>(dfm_inaug, <span class="at">n =</span> <span class="dv">100</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by reverse frequency order</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>features_dfm_inaug<span class="sc">$</span>feature <span class="ot">&lt;-</span> <span class="fu">with</span>(features_dfm_inaug, <span class="fu">reorder</span>(feature, <span class="sc">-</span>frequency))</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(features_dfm_inaug, <span class="fu">aes</span>(<span class="at">x =</span> feature, <span class="at">y =</span> frequency)) <span class="sc">+</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-9.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get frequency grouped by president</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>freq_grouped <span class="ot">&lt;-</span> <span class="fu">textstat_frequency</span>(<span class="fu">dfm</span>(<span class="fu">tokens</span>(data_corpus_inaugural_subset)), </span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">groups =</span> data_corpus_inaugural_subset<span class="sc">$</span>President)</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the term "american"</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>freq_american <span class="ot">&lt;-</span> <span class="fu">subset</span>(freq_grouped, freq_grouped<span class="sc">$</span>feature <span class="sc">%in%</span> <span class="st">"american"</span>)  </span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(freq_american, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> frequency)) <span class="sc">+</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">14</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">14</span>, <span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span> </span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency"</span>) <span class="sc">+</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-10.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>dfm_rel_freq <span class="ot">&lt;-</span> <span class="fu">dfm_weight</span>(<span class="fu">dfm</span>(<span class="fu">tokens</span>(data_corpus_inaugural_subset)), <span class="at">scheme =</span> <span class="st">"prop"</span>) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dfm_rel_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Document-feature matrix of: 6 documents, 4,346 features (85.57% sparse) and 4 docvars.
+                 features
+docs                      my    friends        ,    before          i
+  1953-Eisenhower 0.14582574 0.14582574 4.593511 0.1822822 0.10936930
+  1957-Eisenhower 0.20975354 0.10487677 6.345045 0.1573152 0.05243838
+  1961-Kennedy    0.19467878 0.06489293 5.451006 0.1297859 0.32446463
+  1965-Johnson    0.17543860 0.05847953 5.555556 0.2339181 0.87719298
+  1969-Nixon      0.28973510 0          5.546358 0.1241722 0.86920530
+  1973-Nixon      0.05012531 0.05012531 4.812030 0.2005013 0.60150376
+                 features
+docs                   begin      the expression       of     those
+  1953-Eisenhower 0.03645643 6.234050 0.03645643 5.176814 0.1458257
+  1957-Eisenhower 0          5.977976 0          5.034085 0.1573152
+  1961-Kennedy    0.19467878 5.580792 0          4.218040 0.4542505
+  1965-Johnson    0          4.502924 0          3.333333 0.1754386
+  1969-Nixon      0          5.629139 0          3.890728 0.4552980
+  1973-Nixon      0          4.160401 0          3.408521 0.3007519
+[ reached max_nfeat ... 4,336 more features ]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>rel_freq <span class="ot">&lt;-</span> <span class="fu">textstat_frequency</span>(dfm_rel_freq, <span class="at">groups =</span> dfm_rel_freq<span class="sc">$</span>President)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the term "american"</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>rel_freq_american <span class="ot">&lt;-</span> <span class="fu">subset</span>(rel_freq, feature <span class="sc">%in%</span> <span class="st">"american"</span>)  </span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rel_freq_american, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> frequency)) <span class="sc">+</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.7</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.7</span>, <span class="fl">0.1</span>))) <span class="sc">+</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span> </span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Relative frequency"</span>) <span class="sc">+</span></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-11.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>dfm_weight_pres <span class="ot">&lt;-</span> data_corpus_inaugural <span class="sc">%&gt;%</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">corpus_subset</span>(Year <span class="sc">&gt;</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens</span>(<span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">"english"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_weight</span>(<span class="at">scheme =</span> <span class="st">"prop"</span>)</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate relative frequency by president</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>freq_weight <span class="ot">&lt;-</span> <span class="fu">textstat_frequency</span>(dfm_weight_pres, <span class="at">n =</span> <span class="dv">10</span>, </span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">groups =</span> dfm_weight_pres<span class="sc">$</span>President)</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> freq_weight, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">nrow</span>(freq_weight)<span class="sc">:</span><span class="dv">1</span>, <span class="at">y =</span> frequency)) <span class="sc">+</span></span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> group, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">nrow</span>(freq_weight)<span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> freq_weight<span class="sc">$</span>feature) <span class="sc">+</span></span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Relative frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-12.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only select speeches by Obama and Trump</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>pres_corpus <span class="ot">&lt;-</span> <span class="fu">corpus_subset</span>(data_corpus_inaugural, </span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>                             President <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Obama"</span>, <span class="st">"Trump"</span>))</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dfm grouped by president</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>pres_dfm <span class="ot">&lt;-</span> <span class="fu">tokens</span>(pres_corpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_remove</span>(<span class="fu">stopwords</span>(<span class="st">"english"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_group</span>(<span class="at">groups =</span> President) <span class="sc">%&gt;%</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm</span>()</span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate keyness and determine Trump as target group</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>result_keyness <span class="ot">&lt;-</span> <span class="fu">textstat_keyness</span>(pres_dfm, <span class="at">target =</span> <span class="st">"Trump"</span>)</span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated word keyness</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_keyness</span>(result_keyness) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-13.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot without the reference text (in this case Obama)</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_keyness</span>(result_keyness, <span class="at">show_reference =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-14.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform corpus to dfm</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(data_corpus_irishbudget2010, <span class="at">package =</span> <span class="st">"quanteda.textmodels"</span>)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>ie_dfm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(<span class="fu">tokens</span>(data_corpus_irishbudget2010))</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set reference scores</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>refscores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">4</span>), <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">8</span>))</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict Wordscores model</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>ws <span class="ot">&lt;-</span> <span class="fu">textmodel_wordscores</span>(ie_dfm, <span class="at">y =</span> refscores, <span class="at">smooth =</span> <span class="dv">1</span>)</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated word positions (highlight words and print them in red)</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(ws,</span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">highlighted =</span> <span class="fu">c</span>(<span class="st">"minister"</span>, <span class="st">"have"</span>, <span class="st">"our"</span>, <span class="st">"budget"</span>), </span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">highlighted_color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-15.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get predictions</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(ws, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated document positions and group by "party" variable</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(pred, <span class="at">margin =</span> <span class="st">"documents"</span>,</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">groups =</span> <span class="fu">docvars</span>(data_corpus_irishbudget2010, <span class="st">"party"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-16.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated document positions using the LBG transformation and group by "party" variable</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>pred_lbg <span class="ot">&lt;-</span> <span class="fu">predict</span>(ws, <span class="at">se.fit =</span> <span class="cn">TRUE</span>, <span class="at">rescaling =</span> <span class="st">"lbg"</span>)</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(pred_lbg, <span class="at">margin =</span> <span class="st">"documents"</span>,</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">groups =</span> <span class="fu">docvars</span>(data_corpus_irishbudget2010, <span class="st">"party"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-17.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate Wordfish model</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>wf <span class="ot">&lt;-</span> <span class="fu">textmodel_wordfish</span>(<span class="fu">dfm</span>(<span class="fu">tokens</span>(data_corpus_irishbudget2010)), <span class="at">dir =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>))</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated word positions</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(wf, <span class="at">margin =</span> <span class="st">"features"</span>, </span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">highlighted =</span> <span class="fu">c</span>(<span class="st">"government"</span>, <span class="st">"global"</span>, <span class="st">"children"</span>, </span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"bank"</span>, <span class="st">"economy"</span>, <span class="st">"the"</span>, <span class="st">"citizenship"</span>,</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"productivity"</span>, <span class="st">"deficit"</span>), </span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">highlighted_color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-18.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated document positions</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(wf, <span class="at">groups =</span> data_corpus_irishbudget2010<span class="sc">$</span>party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-19.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform corpus to dfm</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>ie_dfm <span class="ot">&lt;-</span> <span class="fu">dfm</span>(<span class="fu">tokens</span>(data_corpus_irishbudget2010))</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run correspondence analysis on dfm</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>ca <span class="ot">&lt;-</span> <span class="fu">textmodel_ca</span>(ie_dfm)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot estimated positions and group by party</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="fu">textplot_scale1d</span>(ca, <span class="at">margin =</span> <span class="st">"documents"</span>,</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">groups =</span> <span class="fu">docvars</span>(data_corpus_irishbudget2010, <span class="st">"party"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="assign13_files/figure-html/unnamed-chunk-1-20.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>

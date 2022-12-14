@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -130,14 +193,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">EPPS 6356 Assignment07</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assign08.html">
- <span class="dropdown-text">EPPS 6356 Assignment08</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./assign09.html">
- <span class="dropdown-text">EPPS 6356 Assignment09</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./assign10.html">
  <span class="dropdown-text">EPPS 6356 Assignment10</span></a>
   </li>  
@@ -152,10 +207,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./assign13.html">
  <span class="dropdown-text">EPPS 6302 Assignment04</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./assign14.html">
- <span class="dropdown-text">EPPS 6302 Assignment05</span></a>
   </li>  
     </ul>
   </li>
@@ -174,7 +225,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#epps-6356-assignment-7-hackathon-2.0" id="toc-epps-6356-assignment-7-hackathon-2.0" class="nav-link active" data-scroll-target="#epps-6356-assignment-7-hackathon-2.0">EPPS 6356 Assignment 7 Hackathon 2.0</a></li>
+  <li><a href="#epps-6356-assignment-07-hackathon-2.0" id="toc-epps-6356-assignment-07-hackathon-2.0" class="nav-link active" data-scroll-target="#epps-6356-assignment-07-hackathon-2.0">EPPS 6356 Assignment 07 Hackathon 2.0</a></li>
+  <li><a href="#build-a-shiny-app-that-can-display-at-least-three-of-the-charts-in-the-thought-starter.-you-can-use-the-same-dataset-or-multiple." id="toc-build-a-shiny-app-that-can-display-at-least-three-of-the-charts-in-the-thought-starter.-you-can-use-the-same-dataset-or-multiple." class="nav-link" data-scroll-target="#build-a-shiny-app-that-can-display-at-least-three-of-the-charts-in-the-thought-starter.-you-can-use-the-same-dataset-or-multiple.">1. Build a Shiny app that can display at least three of the charts in the Thought Starter. You can use the same dataset or multiple.</a></li>
+  <li><a href="#used-code-for-assigment-07" id="toc-used-code-for-assigment-07" class="nav-link" data-scroll-target="#used-code-for-assigment-07">2. Used Code for Assigment 07</a></li>
+  <li><a href="#the-graph-that-we-was-trying-to-show" id="toc-the-graph-that-we-was-trying-to-show" class="nav-link" data-scroll-target="#the-graph-that-we-was-trying-to-show">3.The graph that we was trying to show</a></li>
   </ul>
 </nav>
     </div>
@@ -197,9 +251,223 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="epps-6356-assignment-7-hackathon-2.0" class="level2">
-<h2 class="anchored" data-anchor-id="epps-6356-assignment-7-hackathon-2.0">EPPS 6356 Assignment 7 Hackathon 2.0</h2>
-<p>1. Build a Shiny app that can display at least three of the charts in the Thought Starter. You can use the same dataset or multiple.</p>
+<section id="epps-6356-assignment-07-hackathon-2.0" class="level2">
+<h2 class="anchored" data-anchor-id="epps-6356-assignment-07-hackathon-2.0">EPPS 6356 Assignment 07 Hackathon 2.0</h2>
+</section>
+<section id="build-a-shiny-app-that-can-display-at-least-three-of-the-charts-in-the-thought-starter.-you-can-use-the-same-dataset-or-multiple." class="level2">
+<h2 class="anchored" data-anchor-id="build-a-shiny-app-that-can-display-at-least-three-of-the-charts-in-the-thought-starter.-you-can-use-the-same-dataset-or-multiple.">1. Build a Shiny app that can display at least three of the charts in the Thought Starter. You can use the same dataset or multiple.</h2>
+</section>
+<section id="used-code-for-assigment-07" class="level2">
+<h2 class="anchored" data-anchor-id="used-code-for-assigment-07">2. Used Code for Assigment 07</h2>
+<p>I tried to get it to work, but I kept getting the following error.</p>
+<p>-Warning: Error in switch: EXPR must be a length 1 vector</p>
+<p>rm(list=ls()) # Clear environment</p>
+<p>oldpar &lt;- par() # save default graphical parameters</p>
+<p>if (!is.null(dev.list()[“RStudioGD”])) # Clear plot window</p>
+<p>dev.off(dev.list()[“RStudioGD”])</p>
+<p>cat(“\014”) # Clear the Console</p>
+<p>library(shiny)</p>
+<p>library(tidyverse)</p>
+<p>library(reshape2)</p>
+<p>library(readxl)</p>
+<p>library(ggplot2)</p>
+<p>setwd(“C:/Users/sksk/Desktop/2022_fall_class/epps_6356_data_visualization/Team_project_data_visualization”)</p>
+<p>#</p>
+<p># This is a Shiny web application. You can run the application by clicking</p>
+<p># the ‘Run App’ button above.</p>
+<p>#</p>
+<p># Find out more about building applications with Shiny here:</p>
+<p>#</p>
+<p># http://shiny.rstudio.com/</p>
+<p>#</p>
+<p>###Data</p>
+<p>pollutiondata&lt;-read_excel(“Toxic Data_ver_1202.xlsx”)</p>
+<p>descriptive&lt;-read_excel(“descriptive_stat.xlsx”)</p>
+<p>provincedata&lt;-read_excel(“province.xlsx”)</p>
+<p>boxplotdata&lt;-read_excel(“boxplot.xlsx”)</p>
+<p>seouldata&lt;-read_excel(“seoul.xlsx”)</p>
+<p>kbukdata&lt;-read_excel(“kbuk.xlsx”)</p>
+<p># Define UI for app that draws a histogram ----</p>
+<p>ui &lt;- fluidPage(</p>
+<p># App title ----</p>
+<p>titlePanel(“Assignment07: Hackathon 2.0”),</p>
+<p># Sidebar layout with input and output definitions ----</p>
+<p>sidebarLayout(</p>
+<p># Sidebar panel for inputs ----</p>
+<p>sidebarPanel(</p>
+<p>##radioButtons(“type”, h4(“Type of Plot”),</p>
+<p>## choices=c(“Bar Chart”, “Pie Chart”)),</p>
+<p>selectInput(“Plot”, h4(“Plot”), “N/A”),</p>
+<p>helpText(h4(“Types Of Toxic chemical Disposal:”), “Emission, Landfill and Transfer”),</p>
+<p>helpText(“Timeframe: 2001-2017”)</p>
+<p>),</p>
+<p># Main panel for displaying outputs ----</p>
+<p>mainPanel(</p>
+<p>plotOutput(“plot”)</p>
+<p>)</p>
+<p>)</p>
+<p>)</p>
+<p># Define server logic required to draw a histogram ----</p>
+<p>server &lt;- function(input, output, session) {</p>
+<p>observe({</p>
+<p>updateSelectInput(session, “plot”,</p>
+<p>choices=switch(input$type,</p>
+<p>“Bar Chart” = c(“Total amount of pollutants”,</p>
+<p>“Total amount of emission”,</p>
+<p>“Total amount of landfill”,</p>
+<p>“Total amount of transfer”,</p>
+<p>“The number of companies reporting”),</p>
+<p>“Pie Chart” = c(“Percentage of Pollutants by Province”))</p>
+<p>)</p>
+<p>})</p>
+<p>output$plot &lt;- renderPlot({</p>
+<p>switch(input$plot,</p>
+<p>“Total amount of pollutants” &lt;- barplot(descriptive$total_pollutants, names.arg =descriptive$year, main = “Total amount of pollutants”,col=“lightcyan”,cex.names=0.7)</p>
+<p>+text(x=“Total amount of pollutants”, y=descriptive$total_pollutants*0.9,labels = descriptive$total_pollutants,col=“red”,cex=0.7),</p>
+<p>“Total amount of emission” &lt;- barplot(descriptive$emission, names.arg =descriptive$year, main = “Total amount of emission”,col=“lightcyan”,cex.names=0.7)</p>
+<p>+text(x=“Total amount of emission”, y=descriptive$emission*0.9,labels = descriptive$emission,col=“red”,cex=0.7),</p>
+<p>“Total amount of landfill” &lt;- barplot(descriptive$landfill, names.arg =descriptive$year, main = “Total amount of landfill”,col=“lightcyan”,cex.names=0.7)</p>
+<p>+text(x=“Total amount of landfill”, y=descriptive$landfill*0.9,labels = descriptive$landfill,col=“red”,cex=0.7),</p>
+<p>“Total amount of transfer” &lt;- barplot(descriptive$transfer, names.arg =descriptive$year, main = “Total amount of transfer”,col=“lightcyan”,cex.names=0.7)</p>
+<p>+text(x=“Total amount of transfer”, y=descriptive$transfer*0.9,labels = descriptive$transfer,col=“red”,cex=0.7),</p>
+<p>“The number of companies reporting” &lt;- barplot(descriptive$report_company, names.arg =descriptive$year, main = “The number of companies reporting”,col=“lightcyan”,cex.names=0.7)</p>
+<p>+text(x=“The number of companies reporting”, y=descriptive$report_company*0.9,labels = descriptive$report_company,col=“red”,cex=0.7),</p>
+<p>“Percentage of Pollutants by Province” &lt;- ggplot(provincedata, aes(x=““, y=total_pollutants, fill = province))+</p>
+<p>geom_bar(width = 0.5, stat = “identity”, color = “white”) +</p>
+<p>coord_polar(“y”, start=0)+</p>
+<p>geom_text(aes(label = paste0(round(total_pollutants/10079236016*100,1),“%”)),</p>
+<p>position = position_stack(vjust = 0.5), color = “#ffffff”)+</p>
+<p>theme_void()+</p>
+<p>scale_fill_manual(values =c(“#FF0000FF”, “#FF9900FF”, “#00FF00FF”, “#6699FFFF”, “#CC33FFFF”, “#99991EFF”, “#999999FF”, “#FF00CCFF”, “358000FF”, “#0000CCFF”, “#996600FF”, “#666666FF”, “#79CC3DFF”, “#CCCC99FF”, “#CC0000FF”, “#CC99FFFF”, “#FFCCCCFF”))</p>
+<p>)</p>
+<p>})</p>
+<p>}</p>
+<p>shinyApp(ui = ui, server = server)</p>
+</section>
+<section id="the-graph-that-we-was-trying-to-show" class="level2">
+<h2 class="anchored" data-anchor-id="the-graph-that-we-was-trying-to-show">3.The graph that we was trying to show</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())                          <span class="co"># Clear environment</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>oldpar <span class="ot">&lt;-</span> <span class="fu">par</span>()                        <span class="co"># save default graphical parameters</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">dev.list</span>()[<span class="st">"RStudioGD"</span>])) <span class="co"># Clear plot window</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\014</span><span class="st">"</span>)                            <span class="co"># Clear the Console</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fmsb)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridBase)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggrepel' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggridges' was built under R version 4.2.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: viridisLite</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/sksk/Desktop/2022_fall_class/epps_6356_data_visualization/Team_project_data_visualization"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="do">###Data</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>pollutiondata<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"Toxic Data_ver_1202.xlsx"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>descriptive<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"descriptive_stat.xlsx"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>provincedata<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"province.xlsx"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>boxplotdata<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"boxplot.xlsx"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>seouldata<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"seoul.xlsx"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>kbukdata<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"kbuk.xlsx"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/sksk/Desktop/2022_fall_class/epps_6356_data_visualization/Team_project_data_visualization"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a> bp<span class="ot">&lt;-</span> <span class="fu">barplot</span>(descriptive<span class="sc">$</span>total_pollutants, <span class="at">names.arg =</span>descriptive<span class="sc">$</span>year, <span class="at">main =</span> <span class="st">"Total amount of pollutants"</span>,<span class="at">col=</span><span class="st">"lightcyan"</span>,<span class="at">cex.names=</span><span class="fl">0.7</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span><span class="st">"Total amount of pollutants"</span>, <span class="at">y=</span>descriptive<span class="sc">$</span>total_pollutants<span class="sc">*</span><span class="fl">0.9</span>,<span class="at">labels =</span> descriptive<span class="sc">$</span>total_pollutants,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in xy.coords(x, y, recycle = TRUE, setLab = FALSE): NAs introduced by
+coercion</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign07_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>           bp1  <span class="ot">&lt;-</span> <span class="fu">barplot</span>(descriptive<span class="sc">$</span>emission, <span class="at">names.arg =</span>descriptive<span class="sc">$</span>year, <span class="at">main =</span> <span class="st">"Total amount of emission"</span>,<span class="at">col=</span><span class="st">"lightcyan"</span>,<span class="at">cex.names=</span><span class="fl">0.7</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span><span class="st">"Total amount of emission"</span>, <span class="at">y=</span>descriptive<span class="sc">$</span>emission<span class="sc">*</span><span class="fl">0.9</span>,<span class="at">labels =</span> descriptive<span class="sc">$</span>emission,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in xy.coords(x, y, recycle = TRUE, setLab = FALSE): NAs introduced by
+coercion</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign07_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>            b  <span class="ot">&lt;-</span> <span class="fu">barplot</span>(descriptive<span class="sc">$</span>landfill, <span class="at">names.arg =</span>descriptive<span class="sc">$</span>year, <span class="at">main =</span> <span class="st">"Total amount of landfill"</span>,<span class="at">col=</span><span class="st">"lightcyan"</span>,<span class="at">cex.names=</span><span class="fl">0.7</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span><span class="st">"Total amount of landfill"</span>, <span class="at">y=</span>descriptive<span class="sc">$</span>landfill<span class="sc">*</span><span class="fl">0.9</span>,<span class="at">labels =</span> descriptive<span class="sc">$</span>landfill,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in xy.coords(x, y, recycle = TRUE, setLab = FALSE): NAs introduced by
+coercion</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign07_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>           b3  <span class="ot">&lt;-</span> <span class="fu">barplot</span>(descriptive<span class="sc">$</span>transfer, <span class="at">names.arg =</span>descriptive<span class="sc">$</span>year, <span class="at">main =</span> <span class="st">"Total amount of transfer"</span>,<span class="at">col=</span><span class="st">"lightcyan"</span>,<span class="at">cex.names=</span><span class="fl">0.7</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span><span class="st">"Total amount of transfer"</span>, <span class="at">y=</span>descriptive<span class="sc">$</span>transfer<span class="sc">*</span><span class="fl">0.9</span>,<span class="at">labels =</span> descriptive<span class="sc">$</span>transfer,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in xy.coords(x, y, recycle = TRUE, setLab = FALSE): NAs introduced by
+coercion</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign07_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>           b4 <span class="ot">&lt;-</span> <span class="fu">barplot</span>(descriptive<span class="sc">$</span>report_company, <span class="at">names.arg =</span>descriptive<span class="sc">$</span>year, <span class="at">main =</span> <span class="st">"The number of companies reporting"</span>,<span class="at">col=</span><span class="st">"lightcyan"</span>,<span class="at">cex.names=</span><span class="fl">0.7</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span><span class="st">"The number of companies reporting"</span>, <span class="at">y=</span>descriptive<span class="sc">$</span>report_company<span class="sc">*</span><span class="fl">0.9</span>,<span class="at">labels =</span> descriptive<span class="sc">$</span>report_company,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">cex=</span><span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in xy.coords(x, y, recycle = TRUE, setLab = FALSE): NAs introduced by
+coercion</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="assign07_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>           bp11  <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(provincedata, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>total_pollutants, <span class="at">fill =</span> province))<span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>             <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start=</span><span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>             <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(total_pollutants<span class="sc">/</span><span class="dv">10079236016</span><span class="sc">*</span><span class="dv">100</span>,<span class="dv">1</span>),<span class="st">"%"</span>)),</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"#ffffff"</span>)<span class="sc">+</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">theme_void</span>()<span class="sc">+</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">scale_fill_manual</span>(<span class="at">values =</span><span class="fu">c</span>(<span class="st">"#FF0000FF"</span>, <span class="st">"#FF9900FF"</span>, <span class="st">"#00FF00FF"</span>, <span class="st">"#6699FFFF"</span>, <span class="st">"#CC33FFFF"</span>, <span class="st">"#99991EFF"</span>, <span class="st">"#999999FF"</span>, <span class="st">"#FF00CCFF"</span>, <span class="st">"358000FF"</span>, <span class="st">"#0000CCFF"</span>, <span class="st">"#996600FF"</span>, <span class="st">"#666666FF"</span>, <span class="st">"#79CC3DFF"</span>, <span class="st">"#CCCC99FF"</span>, <span class="st">"#CC0000FF"</span>, <span class="st">"#CC99FFFF"</span>, <span class="st">"#FFCCCCFF"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

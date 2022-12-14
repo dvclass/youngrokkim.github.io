@@ -193,14 +193,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">EPPS 6356 Assignment07</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assign08.html">
- <span class="dropdown-text">EPPS 6356 Assignment08</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./assign09.html">
- <span class="dropdown-text">EPPS 6356 Assignment09</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./assign10.html">
  <span class="dropdown-text">EPPS 6356 Assignment10</span></a>
   </li>  
@@ -215,10 +207,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li>
     <a class="dropdown-item" href="./assign13.html">
  <span class="dropdown-text">EPPS 6302 Assignment04</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./assign14.html">
- <span class="dropdown-text">EPPS 6302 Assignment05</span></a>
   </li>  
     </ul>
   </li>
@@ -319,13 +307,13 @@ Attaching package: 'zoo'</code></pre>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(M2serial <span class="ot">&lt;-</span> <span class="fu">breakpoints</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">h=</span><span class="fl">0.05</span>, <span class="at">breaks=</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.11    0.00    0.13 </code></pre>
+   0.07    0.00    0.09 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three break model</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(M3serial <span class="ot">&lt;-</span> <span class="fu">breakpoints</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">h=</span><span class="fl">0.05</span>, <span class="at">breaks=</span><span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.15    0.00    0.21 </code></pre>
+   0.14    0.00    0.15 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the results</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M1serial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
